@@ -1,0 +1,12 @@
+$primary-colors = ("red" = #FF0000, "yellow"= #FFFF00, "blue"= #0000FF);
+$secondary-colors = ("purple"= #9932CC, "green"= #00FF00, "orange"= #FFA500);
+
+// You can use map.get($map, $key) to look up a value in a map.
+$red = map.get($primary-colors, "red");
+// You can also add new records in a map using map.set($map, $key, $val).
+map.set($primary-colors, "white", #FFFFFF);
+// Merging maps is also possible with map.merge($map1, $map2).
+$mixed-colors = map.merge($primary-colors, $secondary-colors);
+
+@debug $mixed-colors; // ("red": #FF0000, "yellow": #FFFF00, "blue": #0000FF, "white": #FFFFFF, "purple": #9932CC, "green": #00FF00, "orange" #FFA500)
+
