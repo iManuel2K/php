@@ -42,4 +42,16 @@ echo PHP_VERSION;
 echo __LINE__;
 echo "<br>";
 echo __DIR__;
+echo "<br>";
+
+// Variable Variables
+$foo = "bar";
+$$foo = "baz";
+
+echo "$foo, {$$foo}";
+echo "<br>";
+
+//Type Casting
+$x = (int) 5;
+echo $x;
 ?>
