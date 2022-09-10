@@ -42,4 +42,8 @@ echo PHP_VERSION;
 echo __LINE__;
 echo "<br>";
 echo __DIR__;
+
+echo "<br>";
+$sports = ["name" => "Lacrosse", "year_invented" => 1634];
+echo $sports["name"];
 ?>
