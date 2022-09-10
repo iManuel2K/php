@@ -46,4 +46,16 @@ echo __DIR__;
 echo "<br>";
 $sports = ["name" => "Lacrosse", "year_invented" => 1634];
 echo $sports["name"];
+echo "<br>";
+
+// Variable Variables
+$foo = "bar";
+$$foo = "baz";
+
+echo "$foo, {$$foo}";
+echo "<br>";
+
+//Type Casting
+$x = (int) 5;
+echo $x;
 ?>
