@@ -1,38 +1,3 @@
-<?php
-if (isset($_POST["submit"])) {
-
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-
-    $dbServerName = "localhost";
-    $dbUserName = "root";
-    $dbPassword = "";
-    $dbName = "loginapp";
-
-    $conn = mysqli_connect($dbServerName, $dbUserName, $dbPassword, $dbName);
-
-    if ($conn) {
-        echo "Connected";
-    } else {
-        die("DB connection failed");
-    }
-
-    if (!$username && $password) {
-        echo "Enter the credentials!";
-    }
-
-    $query = "INSERT INTO users(username,password)";
-    $query .= "VALUES ('$username','$password')";
-    $result = mysqli_query($conn, $query);
-
-    // If the result is not true, then the query failed, stop all the code and display the error
-    if (!$result) {
-        die("Query failed" . mysqli_error($conn));
-    }
-}
-
-?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -49,9 +14,9 @@ if (isset($_POST["submit"])) {
 
 <div class="container">
 
-    <div class="col-sm-6">
+    <div class="col-me-6">
 
-        <form action="site.php" method="post">
+        <form action="register.php" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
                 <label>
@@ -66,54 +31,12 @@ if (isset($_POST["submit"])) {
                 </label>
             </div>
 
-            <input class="btn btn-primary" type="submit" name="submit" value="Submit">
+            <input class="btn btn-primary" type="submit" name="submit" value="Register">
         </form>
 
     </div>
 
 </div>
 
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <title>CRSystem</title>
-    <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-
-    <form action="site.php" method="post" class="form-inputs">
-        What is your name? <input type="text" name="name" />
-        What is your gender? Male <input type="radio" name="gender-m"> Female <input type="radio" name="gender-f">
-        What is your age? <input type="number" name="age">
-        What is your height? <input type="number" name="height">
-        What is your weight? <input type="number" name="weight">
-        What is your favourite season? <select>
-            <option value="spring" name="spring">Spring</option>
-            <option value="summer" name="summer">Summer</option>
-            <option value="autumn" name="autumn">Autumn</option>
-            <option value="winter" name="winter">Winter</option>
-        </select>
-        <input type="submit">
-    </form>
-
-    <?php
-
-    echo $_POST['name'];
-    echo $_POST['gender-f'];
-    echo $_POST['gender-m'];
-    echo $_POST['age'];
-    echo $_POST['height'];
-    echo $_POST['weight'];
-    echo $_POST['spring'];
-    echo $_POST['summer'];
-    echo $_POST['autumn'];
-    echo $_POST['winter'];
-
-
-    ?>
 </body>
 </html>
