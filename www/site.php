@@ -75,7 +75,7 @@ if (isset($_POST["submit"])) {
 
 </body>
 </html>
-=======
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
